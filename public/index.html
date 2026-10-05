@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spoken English Referral Tree</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <h1>Spoken English</h1>
+      <p>3-Member Referral Tree</p>
+    </div>
+    <button id="logout" class="ghost hidden">Logout</button>
+  </header>
+
+  <section id="auth">
+    <div class="tabs">
+      <button id="loginTab" class="active">Login</button>
+      <button id="registerTab">Register</button>
+    </div>
+
+    <form id="loginForm" class="card">
+      <h2>Login</h2>
+      <input id="loginEmail" type="email" placeholder="Email" required>
+      <input id="loginPassword" type="password" placeholder="Password" required>
+      <button>Login</button>
+      <div id="loginMsg" class="msg"></div>
+    </form>
+
+    <form id="registerForm" class="card hidden">
+      <h2>Create Account</h2>
+      <input id="regName" placeholder="Full name" required>
+      <input id="regEmail" type="email" placeholder="Email" required>
+      <input id="regPassword" type="password" minlength="6" placeholder="Password (min 6)" required>
+      <input id="regReferral" placeholder="Referral code (optional)">
+      <button>Register</button>
+      <div id="regMsg" class="msg"></div>
+    </form>
+  </section>
+
+  <section id="dashboard" class="hidden">
+    <div class="profile card">
+      <div>
+        <h2 id="welcome"></h2>
+        <p>Your referral code: <b id="code"></b></p>
+        <input id="refLink" readonly>
+        <button id="copyBtn">Copy Referral Link</button>
+      </div>
+      <div class="stat">
+        <span id="directCount">0</span>
+        <small>Direct Members</small>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>My Direct Members</h2>
+      <div id="directList" class="members"></div>
+    </div>
+
+    <div class="card">
+      <h2>My Referral Tree</h2>
+      <div id="tree" class="tree"></div>
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
